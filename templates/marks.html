@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{m}}</h1>
+
+{%if m >= 80%}
+    <h2 style="color: green;">Pass With First Division</h2>
+
+{% elif m >= 60%}
+    <h2>you are pass with second division</h2>
+
+{% elif m >= 30%}
+    <h2>pass with third division</h2>
+
+{%else%}
+    <h2 style="color: red;">Fail</h2>
+
+{%endif%}
+
+<hr>
+
+<h1>Check odd even</h1>
+
+{% if m|divisibleby:2%}
+    <h2>Even number</h2>
+
+{% else %}
+    <h2>odd numder</h2>
+    
+{%endif%}
+
+{% endblock %}
+

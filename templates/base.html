@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <!--navbar start-->
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+        width: 100%;
+        background: #0f172a;
+        padding: 15px 7%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Logo */
+    .logo {
+        color: #38bdf8;
+        text-decoration: none;
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    /* Menu */
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: #e2e8f0;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #38bdf8;
+    }
+
+    /* Login Button */
+    .login-btn {
+        background: #38bdf8;
+        color: #0f172a !important;
+        padding: 9px 20px;
+        border-radius: 8px;
+        font-weight: bold !important;
+    }
+
+    .login-btn:hover {
+        background: #7dd3fc;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+        .navbar {
+            padding: 15px 5%;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .nav-links {
+            gap: 18px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+</style>
+
+
+<nav class="navbar">
+
+    <!-- Logo -->
+    <a href="{% url 'home' %}" class="logo">
+        DjangoApp
+    </a>
+
+    <!-- Navigation -->
+    <ul class="nav-links">
+
+        <li>
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+
+        <li>
+            <a href="{% url 'about' %}">About</a>
+        </li>
+
+        <li>
+            <a href="{% url 'services' %}">Services</a>
+        </li>
+
+        <li>
+            <a href="{% url 'contact' %}">Contact</a>
+        </li>
+
+         <li>
+            <a href="{% url 'studentdetails' %}">StudentDetails</a>
+        </li>
+
+        <li>
+            <a href="{% url 'teacherdetails' %}">TeacherDetails</a>
+        </li>
+        
+        <li>
+            <a href="{% url 'demo' %}">Demo</a>
+        </li>
+
+        <li>
+            <a href="#" class="login-btn">Login</a>
+        </li>
+        
+
+    </ul>
+
+</nav>
+
+
+    <!--navbar end-->
+
+    <!--body start-->
+    {%block content%}
+
+    {%endblock%}
+
+    <!--body end-->
+
+    <!--footer satrt-->
+<style>
+    .footer {
+        background: #0f172a;
+        color: #94a3b8;
+        padding: 18px 7% 12px;
+        margin-top: 50px;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .footer-logo {
+        color: #38bdf8;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 22px;
+    }
+
+    .footer-links a {
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    .footer-links a:hover {
+        color: #38bdf8;
+    }
+
+    .footer-copy {
+        font-size: 13px;
+        color: #64748b;
+    }
+
+    @media (max-width: 600px) {
+        .footer-container {
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+        }
+
+        .footer-links {
+            gap: 15px;
+        }
+    }
+</style>
+
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-logo">
+            DjangoApp
+        </div>
+
+
+        <div class="footer-copy">
+            © 2026 DjangoApp
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+    <!--footer end-->
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

@@ -1,0 +1,467 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="about-page">
+
+    <!-- ================= HERO ================= -->
+
+    <section class="about-hero">
+
+        <div class="about-glow about-glow-one"></div>
+        <div class="about-glow about-glow-two"></div>
+
+        <div class="about-container about-hero-grid">
+
+            <!-- LEFT -->
+
+            <div class="about-hero-content">
+
+                <span class="about-badge">
+                    <span class="badge-dot"></span>
+                    ABOUT DJANGOAPP
+                </span>
+
+                <h1>
+                    Making academic data
+                    <span>simple & smarter.</span>
+                </h1>
+
+                <p>
+                    DjangoApp is a modern academic management platform
+                    designed to keep student information, teacher records
+                    and academic data organized in one place.
+                </p>
+
+                <div class="about-hero-points">
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Simple to use
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Clean interface
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Responsive design
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT IMAGE -->
+
+            <div class="about-hero-visual">
+
+                <div class="image-glow"></div>
+
+                <div class="hero-image-card">
+
+                    <img
+                        src="{% static 'images/about-hero.png' %}"
+                        alt="DjangoApp Academic Dashboard"
+                    >
+
+                    <div class="image-floating floating-top">
+
+                        <div class="floating-icon">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+
+                        <div>
+                            <strong>Organized</strong>
+                            <small>Academic Data</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="image-floating floating-bottom">
+
+                        <div class="floating-icon purple">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+
+                        <div>
+                            <strong>Smart</strong>
+                            <small>Information System</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= INTRO ================= -->
+
+    <section class="about-section">
+
+        <div class="about-section-heading">
+
+            <span class="section-label">
+                OUR PURPOSE
+            </span>
+
+            <h2>
+                One platform.
+                <span>Everything organized.</span>
+            </h2>
+
+            <p>
+                DjangoApp brings important academic information
+                together through a clean, modern and easy-to-use
+                interface.
+            </p>
+
+        </div>
+
+
+        <div class="purpose-grid">
+
+            <div class="purpose-card">
+
+                <div class="purpose-icon">
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+
+                <h3>Centralized Information</h3>
+
+                <p>
+                    Student and teacher information can be accessed
+                    from one organized platform.
+                </p>
+
+            </div>
+
+
+            <div class="purpose-card">
+
+                <div class="purpose-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+
+                <h3>Quick Access</h3>
+
+                <p>
+                    Find important academic information quickly
+                    without unnecessary complexity.
+                </p>
+
+            </div>
+
+
+            <div class="purpose-card">
+
+                <div class="purpose-icon">
+                    <i class="fa-solid fa-display"></i>
+                </div>
+
+                <h3>Modern Experience</h3>
+
+                <p>
+                    A responsive interface designed for desktop,
+                    tablet and mobile screens.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STUDENT SECTION ================= -->
+
+    <section class="about-feature student-feature">
+
+        <div class="about-container feature-grid">
+
+            <div class="feature-image">
+
+                <div class="feature-image-bg"></div>
+
+                <img
+                    src="{% static 'images/student-about.png' %}"
+                    alt="Student Management"
+                >
+
+            </div>
+
+
+            <div class="feature-content">
+
+                <span class="section-label">
+                    STUDENT MANAGEMENT
+                </span>
+
+                <h2>
+                    Student information,
+                    <span>organized beautifully.</span>
+                </h2>
+
+                <p>
+                    DjangoApp provides a simple way to explore
+                    student profiles and academic information
+                    through a clean interface.
+                </p>
+
+                <div class="feature-list">
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        Student profiles
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        Roll number details
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        Marks and academic records
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        Age and city information
+                    </div>
+
+                </div>
+
+                <a href="{% url 'studentdetails' %}"
+                   class="about-button">
+
+                    Explore Students
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TEACHER SECTION ================= -->
+
+    <section class="about-feature teacher-feature">
+
+        <div class="about-container feature-grid reverse">
+
+            <div class="feature-content">
+
+                <span class="section-label">
+                    TEACHER MANAGEMENT
+                </span>
+
+                <h2>
+                    Teacher records,
+                    <span>clear and accessible.</span>
+                </h2>
+
+                <p>
+                    Explore teacher profiles, subjects and other
+                    important information through an organized
+                    academic interface.
+                </p>
+
+                <div class="feature-list">
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        Teacher profiles
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        Subject information
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        Age and city details
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        Clean organized records
+                    </div>
+
+                </div>
+
+                <a href="{% url 'teacherdetails' %}"
+                   class="about-button">
+
+                    Explore Teachers
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+
+            <div class="feature-image">
+
+                <div class="feature-image-bg teacher-bg"></div>
+
+                <img
+                    src="{% static 'images/teacher-about.png' %}"
+                    alt="Teacher Management"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TECHNOLOGY ================= -->
+
+    <section class="technology-section">
+
+        <div class="about-section-heading">
+
+            <span class="section-label">
+                TECHNOLOGY
+            </span>
+
+            <h2>
+                Built with
+                <span>modern technology.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="technology-grid">
+
+            <div class="tech-card">
+
+                <div class="tech-icon">
+                    <i class="fa-brands fa-python"></i>
+                </div>
+
+                <h3>Python</h3>
+
+                <p>
+                    Powerful backend development.
+                </p>
+
+            </div>
+
+
+            <div class="tech-card">
+
+                <div class="tech-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <h3>Django</h3>
+
+                <p>
+                    Structured web application framework.
+                </p>
+
+            </div>
+
+
+            <div class="tech-card">
+
+                <div class="tech-icon">
+                    <i class="fa-brands fa-html5"></i>
+                </div>
+
+                <h3>HTML & CSS</h3>
+
+                <p>
+                    Modern responsive interface.
+                </p>
+
+            </div>
+
+
+            <div class="tech-card">
+
+                <div class="tech-icon">
+                    <i class="fa-brands fa-js"></i>
+                </div>
+
+                <h3>JavaScript</h3>
+
+                <p>
+                    Interactive user experience.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="about-cta">
+
+        <div class="cta-glow"></div>
+
+        <span class="cta-label">
+            DJANGOAPP
+        </span>
+
+        <h2>
+            Explore a simpler way
+            to manage academic data.
+        </h2>
+
+        <p>
+            Discover student and teacher information
+            through our modern academic platform.
+        </p>
+
+        <div class="cta-buttons">
+
+            <a href="{% url 'studentdetails' %}"
+               class="about-button">
+
+                Students
+                <span>→</span>
+
+            </a>
+
+            <a href="{% url 'teacherdetails' %}"
+               class="about-button secondary-button">
+
+                Teachers
+                <span>→</span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="{% static 'js/main.js' %}"></script>
+
+{% endblock %}

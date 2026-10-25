@@ -1,0 +1,716 @@
+<style>
+
+    /* =================================
+       TEACHER CARD
+    ================================= */
+
+    .teacher-card {
+
+        position: relative;
+
+        width: 100%;
+
+        background: #ffffff;
+
+        border: 1px solid #e5e8f0;
+
+        border-radius: 24px;
+
+        padding: 22px;
+
+        overflow: hidden;
+
+        box-shadow:
+            0 8px 28px rgba(25, 35, 65, 0.07);
+
+        transition:
+            transform 0.4s ease,
+            box-shadow 0.4s ease,
+            border-color 0.4s ease;
+
+        animation:
+            teacherCardIn 0.6s ease both;
+    }
+
+
+    /* =================================
+       TOP GRADIENT
+    ================================= */
+
+    .teacher-card::before {
+
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 5px;
+
+        background:
+            linear-gradient(
+                90deg,
+                #06b6d4,
+                #6366f1,
+                #a855f7
+            );
+    }
+
+
+    /* =================================
+       BACKGROUND GLOW
+    ================================= */
+
+    .teacher-card::after {
+
+        content: "";
+
+        position: absolute;
+
+        width: 150px;
+        height: 150px;
+
+        top: -75px;
+        right: -70px;
+
+        border-radius: 50%;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(99,102,241,0.13),
+                rgba(6,182,212,0.10)
+            );
+
+        transition: 0.5s ease;
+
+        pointer-events: none;
+    }
+
+
+    /* =================================
+       HOVER
+    ================================= */
+
+    .teacher-card:hover {
+
+        transform: translateY(-9px);
+
+        border-color: #d7dbff;
+
+        box-shadow:
+            0 24px 55px rgba(79,70,229,0.15);
+    }
+
+
+    .teacher-card:hover::after {
+
+        transform: scale(1.7);
+    }
+
+
+    /* =================================
+       HEADER
+    ================================= */
+
+    .teacher-header {
+
+        position: relative;
+
+        z-index: 2;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 13px;
+
+        margin-bottom: 22px;
+    }
+
+
+    /* =================================
+       AVATAR
+    ================================= */
+
+    .teacher-avatar {
+
+        width: 60px;
+        height: 60px;
+
+        flex-shrink: 0;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 18px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #06b6d4,
+                #6366f1
+            );
+
+        color: white;
+
+        font-size: 24px;
+
+        font-weight: 800;
+
+        box-shadow:
+            0 10px 25px rgba(99,102,241,0.25);
+
+        transition: 0.4s ease;
+    }
+
+
+    .teacher-card:hover .teacher-avatar {
+
+        transform:
+            rotate(-7deg)
+            scale(1.08);
+
+        border-radius: 50%;
+    }
+
+
+    /* =================================
+       NAME
+    ================================= */
+
+    .teacher-name {
+
+        font-size: 19px;
+
+        font-weight: 800;
+
+        color: #172033;
+
+        margin-bottom: 5px;
+
+        text-transform: capitalize;
+    }
+
+
+    .teacher-role {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 6px;
+
+        font-size: 11px;
+
+        color: #8b93a5;
+    }
+
+
+    .teacher-role i {
+
+        color: #6366f1;
+
+        font-size: 11px;
+    }
+
+
+    /* =================================
+       INFORMATION GRID
+    ================================= */
+
+    .teacher-info {
+
+        position: relative;
+
+        z-index: 2;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+
+        margin-bottom: 16px;
+    }
+
+
+    /* =================================
+       INFO BOX
+    ================================= */
+
+    .teacher-info-box {
+
+        padding: 13px;
+
+        border-radius: 14px;
+
+        background: #f8f9fc;
+
+        border: 1px solid #eef0f5;
+
+        transition: 0.3s ease;
+    }
+
+
+    .teacher-info-box:hover {
+
+        transform: translateY(-3px);
+
+        background: #f5f5ff;
+
+        border-color: #dedfff;
+    }
+
+
+    /* =================================
+       LABEL
+    ================================= */
+
+    .teacher-label {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 6px;
+
+        margin-bottom: 6px;
+
+        color: #9aa2b2;
+
+        font-size: 9px;
+
+        font-weight: 700;
+
+        letter-spacing: 0.6px;
+
+        text-transform: uppercase;
+    }
+
+
+    .teacher-label i {
+
+        color: #6366f1;
+
+        font-size: 10px;
+    }
+
+
+    /* =================================
+       VALUE
+    ================================= */
+
+    .teacher-value {
+
+        display: block;
+
+        color: #273044;
+
+        font-size: 14px;
+
+        font-weight: 700;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        white-space: nowrap;
+    }
+
+
+    /* =================================
+       SUBJECT
+    ================================= */
+
+    .teacher-subject {
+
+        position: relative;
+
+        z-index: 2;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 10px;
+
+        padding: 14px;
+
+        margin-bottom: 17px;
+
+        border-radius: 15px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #effaff,
+                #f5f3ff
+            );
+    }
+
+
+    .subject-left {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        min-width: 0;
+    }
+
+
+    /* =================================
+       SUBJECT ICON
+    ================================= */
+
+    .subject-icon {
+
+        width: 38px;
+        height: 38px;
+
+        flex-shrink: 0;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 11px;
+
+        background: white;
+
+        color: #6366f1;
+
+        box-shadow:
+            0 5px 15px rgba(99,102,241,0.10);
+
+        transition: 0.3s ease;
+    }
+
+
+    .teacher-card:hover .subject-icon {
+
+        transform: rotate(8deg);
+    }
+
+
+    /* =================================
+       SUBJECT TEXT
+    ================================= */
+
+    .subject-title {
+
+        font-size: 11px;
+
+        font-weight: 700;
+
+        color: #69738a;
+    }
+
+
+    .subject-subtitle {
+
+        margin-top: 3px;
+
+        font-size: 9px;
+
+        color: #a0a7b6;
+    }
+
+
+    /* =================================
+       SUBJECT VALUE
+    ================================= */
+
+    .subject-value {
+
+        max-width: 120px;
+
+        padding: 7px 11px;
+
+        border-radius: 20px;
+
+        background: white;
+
+        color: #5b5bd6;
+
+        font-size: 11px;
+
+        font-weight: 800;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+    }
+
+
+    /* =================================
+       BUTTON
+    ================================= */
+
+    .teacher-button {
+
+        position: relative;
+
+        z-index: 2;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 8px;
+
+        width: 100%;
+
+        padding: 12px;
+
+        border-radius: 13px;
+
+        background: #172033;
+
+        color: white;
+
+        text-decoration: none;
+
+        font-size: 12px;
+
+        font-weight: 700;
+
+        transition: 0.35s ease;
+    }
+
+
+    .teacher-button span {
+
+        transition: 0.35s ease;
+    }
+
+
+    .teacher-button:hover {
+
+        background:
+            linear-gradient(
+                90deg,
+                #06b6d4,
+                #6366f1
+            );
+
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 10px 22px rgba(99,102,241,0.25);
+    }
+
+
+    .teacher-button:hover span {
+
+        transform: translateX(5px);
+    }
+
+
+    /* =================================
+       CARD ENTRY ANIMATION
+    ================================= */
+
+    @keyframes teacherCardIn {
+
+        from {
+
+            opacity: 0;
+
+            transform:
+                translateY(25px)
+                scale(0.97);
+        }
+
+        to {
+
+            opacity: 1;
+
+            transform:
+                translateY(0)
+                scale(1);
+        }
+    }
+
+
+</style>
+
+
+<!-- =================================
+     ONE TEACHER CARD
+================================= -->
+
+<article class="teacher-card">
+
+
+    <!-- ================================
+         TEACHER HEADER
+    ================================= -->
+
+    <div class="teacher-header">
+
+
+        <!-- FIRST LETTER -->
+
+        <div class="teacher-avatar">
+
+            {{ i.name|first|upper }}
+
+        </div>
+
+
+        <!-- NAME -->
+
+        <div>
+
+            <div class="teacher-name">
+
+                {{ i.name }}
+
+            </div>
+
+
+            <div class="teacher-role">
+
+                <i class="fa-solid fa-chalkboard-user"></i>
+
+                Teacher
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ================================
+         AGE + CITY
+    ================================= -->
+
+    <div class="teacher-info">
+
+
+        <!-- AGE -->
+
+        <div class="teacher-info-box">
+
+            <span class="teacher-label">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                Age
+
+            </span>
+
+
+            <span class="teacher-value">
+
+                {{ i.age }}
+
+            </span>
+
+        </div>
+
+
+        <!-- CITY -->
+
+        <div class="teacher-info-box">
+
+            <span class="teacher-label">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                City
+
+            </span>
+
+
+            <span class="teacher-value">
+
+                {{ i.city }}
+
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ================================
+         SUBJECT
+    ================================= -->
+
+    <div class="teacher-subject">
+
+
+        <div class="subject-left">
+
+
+            <div class="subject-icon">
+
+                <i class="fa-solid fa-book-open"></i>
+
+            </div>
+
+
+            <div>
+
+                <div class="subject-title">
+
+                    Teaching Subject
+
+                </div>
+
+
+                <div class="subject-subtitle">
+
+                    Main subject
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="subject-value">
+
+            {{ i.subject }}
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ================================
+         BUTTON
+    ================================= -->
+
+    <a href="#" class="teacher-button">
+
+        View Details
+
+        <span>→</span>
+
+    </a>
+
+
+</article>

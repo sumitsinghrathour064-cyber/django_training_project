@@ -1,0 +1,1250 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- =========================================
+     TEACHER PAGE INTRO
+========================================= -->
+
+<style>
+
+    .teacher-intro {
+
+        position: relative;
+
+        width: 92%;
+        max-width: 1250px;
+
+        margin: 45px auto 10px;
+
+        padding: 35px 40px;
+
+        border-radius: 24px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #ffffff 0%,
+                #f5f7ff 100%
+            );
+
+        border: 1px solid #e3e6f2;
+
+        overflow: hidden;
+
+        box-shadow:
+            0 10px 30px rgba(37, 45, 80, 0.06);
+
+        animation:
+            teacherIntroIn .7s ease both;
+    }
+
+
+    /* =========================================
+       DECORATIVE GLOW
+    ========================================= */
+
+    .teacher-intro::before {
+
+        content: "";
+
+        position: absolute;
+
+        width: 230px;
+        height: 230px;
+
+        top: -135px;
+        right: -80px;
+
+        border-radius: 50%;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(6,182,212,.14),
+                rgba(99,102,241,.13),
+                rgba(168,85,247,.10)
+            );
+
+        transition: .6s ease;
+    }
+
+
+    .teacher-intro:hover::before {
+
+        transform: scale(1.25);
+    }
+
+
+    /* =========================================
+       BADGE
+    ========================================= */
+
+    .teacher-intro-badge {
+
+        position: relative;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        padding: 7px 13px;
+
+        margin-bottom: 13px;
+
+        border-radius: 30px;
+
+        background: #eef2ff;
+
+        border: 1px solid #dfe3ff;
+
+        color: #565bc7;
+
+        font-size: 11px;
+
+        font-weight: 800;
+
+        letter-spacing: .5px;
+
+        text-transform: uppercase;
+    }
+
+
+    .teacher-intro-badge i {
+
+        color: #6366f1;
+    }
+
+
+    /* =========================================
+       MAIN HEADING
+    ========================================= */
+
+    .teacher-intro h1 {
+
+        position: relative;
+
+        margin: 0;
+
+        font-size: 38px;
+
+        line-height: 1.15;
+
+        font-weight: 850;
+
+        color: #172033;
+    }
+
+
+    /* =========================================
+       GRADIENT WORD
+    ========================================= */
+
+    .teacher-intro h1 span {
+
+        background:
+            linear-gradient(
+                90deg,
+                #06b6d4,
+                #6366f1,
+                #8b5cf6
+            );
+
+        background-clip: text;
+
+        -webkit-background-clip: text;
+
+        color: transparent;
+
+        -webkit-text-fill-color: transparent;
+    }
+
+
+    /* =========================================
+       DESCRIPTION
+    ========================================= */
+
+    .teacher-intro p {
+
+        position: relative;
+
+        max-width: 680px;
+
+        margin: 12px 0 0;
+
+        color: #778197;
+
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =========================================
+       BOTTOM ACCENT
+    ========================================= */
+
+    .teacher-intro-line {
+
+        position: absolute;
+
+        left: 40px;
+
+        bottom: 0;
+
+        width: 95px;
+
+        height: 4px;
+
+        border-radius:
+            10px 10px 0 0;
+
+        background:
+            linear-gradient(
+                90deg,
+                #06b6d4,
+                #6366f1,
+                #a855f7
+            );
+    }
+
+
+    /* =========================================
+       SMALL FLOATING DOTS
+    ========================================= */
+
+    .teacher-intro-dot {
+
+        position: absolute;
+
+        width: 8px;
+        height: 8px;
+
+        border-radius: 50%;
+
+        background: #6366f1;
+
+        opacity: .35;
+
+        right: 105px;
+
+        bottom: 30px;
+
+        animation:
+            teacherFloat 3s ease-in-out infinite;
+    }
+
+
+    .teacher-intro-dot.two {
+
+        width: 5px;
+        height: 5px;
+
+        right: 135px;
+
+        bottom: 50px;
+
+        background: #06b6d4;
+
+        animation-delay: .7s;
+    }
+
+
+    .teacher-intro-dot.three {
+
+        width: 6px;
+        height: 6px;
+
+        right: 75px;
+
+        bottom: 65px;
+
+        background: #a855f7;
+
+        animation-delay: 1.2s;
+    }
+
+
+    /* =========================================
+       ANIMATIONS
+    ========================================= */
+
+    @keyframes teacherIntroIn {
+
+        from {
+
+            opacity: 0;
+
+            transform:
+                translateY(20px);
+        }
+
+        to {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+    }
+
+
+    @keyframes teacherFloat {
+
+        0%,
+        100% {
+
+            transform:
+                translateY(0);
+        }
+
+        50% {
+
+            transform:
+                translateY(-8px);
+        }
+    }
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 650px) {
+
+        .teacher-intro {
+
+            width: 88%;
+
+            padding: 28px 24px;
+
+            margin-top: 35px;
+        }
+
+
+        .teacher-intro h1 {
+
+            font-size: 29px;
+        }
+
+
+        .teacher-intro p {
+
+            font-size: 13px;
+        }
+
+
+        .teacher-intro-line {
+
+            left: 24px;
+        }
+
+
+        .teacher-intro-dot {
+
+            display: none;
+        }
+    }
+
+</style>
+
+
+<!-- =========================================
+     TEACHER INTRO
+========================================= -->
+
+<section class="teacher-intro">
+
+
+    <!-- BADGE -->
+
+    <div class="teacher-intro-badge">
+
+        <i class="fa-solid fa-chalkboard-user"></i>
+
+        Teacher Portal
+
+    </div>
+
+
+    <!-- HEADING -->
+
+    <h1>
+
+        Welcome to the
+
+        <span>Teacher Dashboard</span>
+
+    </h1>
+
+
+    <!-- DESCRIPTION -->
+
+    <p>
+
+        Explore teacher profiles, teaching subjects,
+        personal information and other important
+        academic records in one place.
+
+    </p>
+
+
+    <!-- ACCENT LINE -->
+
+    <div class="teacher-intro-line"></div>
+
+
+    <!-- FLOATING DOTS -->
+
+    <div class="teacher-intro-dot"></div>
+
+    <div class="teacher-intro-dot two"></div>
+
+    <div class="teacher-intro-dot three"></div>
+
+
+</section>
+
+
+<hr>
+
+<!-- =========================================
+     MODERN TEACHER TABLE
+     SAME THEME AS TEACHER CARD
+========================================= -->
+
+<style>
+
+    /* =========================================
+       MAIN SECTION
+    ========================================= */
+
+    .teacher-table-section {
+        width: 92%;
+        max-width: 1100px;
+        margin: 55px auto;
+    }
+
+
+    /* =========================================
+       HEADING
+    ========================================= */
+
+    .teacher-table-heading {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .teacher-table-heading h2 {
+        margin: 0;
+
+        font-size: 30px;
+        font-weight: 800;
+
+        color: #172033;
+    }
+
+    .teacher-table-heading p {
+        margin: 8px 0 0;
+
+        font-size: 14px;
+
+        color: #7b8496;
+    }
+
+
+    /* =========================================
+       TABLE CONTAINER
+    ========================================= */
+
+    .teacher-table-wrapper {
+
+        position: relative;
+
+        width: 100%;
+
+        padding: 7px;
+
+        background: #ffffff;
+
+        border: 1px solid #e5e8f1;
+
+        border-radius: 22px;
+
+        overflow-x: auto;
+
+        box-shadow:
+            0 12px 35px rgba(37, 45, 80, 0.08);
+
+        animation:
+            teacherTableIn .6s ease both;
+    }
+
+
+    /* TOP GRADIENT LINE */
+
+    .teacher-table-wrapper::before {
+
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 4px;
+
+        background:
+            linear-gradient(
+                90deg,
+                #06b6d4,
+                #6366f1,
+                #a855f7
+            );
+
+        border-radius:
+            22px 22px 0 0;
+    }
+
+
+    /* =========================================
+       TABLE
+    ========================================= */
+
+    .teacher-modern-table {
+
+        width: 100%;
+
+        min-width: 700px;
+
+        border-collapse: separate;
+
+        border-spacing: 0;
+    }
+
+
+    /* =========================================
+       TABLE HEADER
+    ========================================= */
+
+    .teacher-modern-table thead th {
+
+        padding: 17px 20px;
+
+        text-align: left;
+
+        color: white;
+
+        font-size: 11px;
+
+        font-weight: 800;
+
+        letter-spacing: .7px;
+
+        text-transform: uppercase;
+
+        background:
+            linear-gradient(
+                90deg,
+                #4f46e5,
+                #6366f1,
+                #7c3aed
+            );
+    }
+
+
+    .teacher-modern-table thead th:first-child {
+
+        border-radius: 15px 0 0 0;
+    }
+
+
+    .teacher-modern-table thead th:last-child {
+
+        border-radius: 0 15px 0 0;
+    }
+
+
+    /* =========================================
+       BODY ROW
+    ========================================= */
+
+    .teacher-modern-table tbody tr {
+
+        background: #ffffff;
+
+        transition:
+            background .3s ease,
+            transform .3s ease;
+    }
+
+
+    .teacher-modern-table tbody tr:nth-child(even) {
+
+        background: #fafaff;
+    }
+
+
+    .teacher-modern-table tbody tr:hover {
+
+        background: #f3f4ff;
+    }
+
+
+    /* =========================================
+       CELLS
+    ========================================= */
+
+    .teacher-modern-table tbody td {
+
+        padding: 15px 20px;
+
+        border-bottom: 1px solid #edf0f5;
+
+        color: #344054;
+
+        font-size: 14px;
+
+        font-weight: 600;
+    }
+
+
+    .teacher-modern-table tbody tr:last-child td {
+
+        border-bottom: none;
+    }
+
+
+    /* =========================================
+       TEACHER NAME
+    ========================================= */
+
+    .teacher-name-cell {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 11px;
+
+        color: #172033;
+
+        font-weight: 800;
+    }
+
+
+    /* =========================================
+       AVATAR
+    ========================================= */
+
+    .teacher-table-avatar {
+
+        width: 39px;
+        height: 39px;
+
+        flex-shrink: 0;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 12px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #06b6d4,
+                #6366f1
+            );
+
+        color: white;
+
+        font-size: 15px;
+
+        font-weight: 800;
+
+        box-shadow:
+            0 7px 16px rgba(99,102,241,.20);
+
+        transition:
+            transform .35s ease,
+            border-radius .35s ease;
+    }
+
+
+    /* Avatar animation */
+
+    .teacher-modern-table tbody tr:hover
+    .teacher-table-avatar {
+
+        transform:
+            rotate(-7deg)
+            scale(1.1);
+
+        border-radius: 50%;
+    }
+
+
+    /* =========================================
+       AGE BADGE
+    ========================================= */
+
+    .teacher-age-badge {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 6px;
+
+        padding: 7px 11px;
+
+        border-radius: 20px;
+
+        background: #f1f3ff;
+
+        border: 1px solid #e3e5ff;
+
+        color: #565bc7;
+
+        font-size: 11px;
+
+        font-weight: 800;
+    }
+
+
+    .teacher-age-badge i {
+
+        color: #6366f1;
+
+        font-size: 10px;
+    }
+
+
+    /* =========================================
+       CITY
+    ========================================= */
+
+    .teacher-city-cell {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 7px;
+    }
+
+
+    .teacher-city-cell i {
+
+        color: #06a9c8;
+
+        font-size: 12px;
+    }
+
+
+    /* =========================================
+       SUBJECT BADGE
+    ========================================= */
+
+    .teacher-subject-badge {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        max-width: 180px;
+
+        padding: 7px 12px;
+
+        border-radius: 20px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #effaff,
+                #f5f3ff
+            );
+
+        border: 1px solid #e2e5ff;
+
+        color: #575bd1;
+
+        font-size: 11px;
+
+        font-weight: 800;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+    }
+
+
+    .teacher-subject-badge i {
+
+        color: #6366f1;
+
+        font-size: 11px;
+    }
+
+
+    /* =========================================
+       ROW ANIMATION
+    ========================================= */
+
+    .teacher-modern-table tbody tr {
+
+        animation:
+            teacherRowIn .45s ease both;
+    }
+
+
+    .teacher-modern-table tbody tr:nth-child(2) {
+        animation-delay: .08s;
+    }
+
+    .teacher-modern-table tbody tr:nth-child(3) {
+        animation-delay: .16s;
+    }
+
+    .teacher-modern-table tbody tr:nth-child(4) {
+        animation-delay: .24s;
+    }
+
+    .teacher-modern-table tbody tr:nth-child(5) {
+        animation-delay: .32s;
+    }
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 700px) {
+
+        .teacher-table-section {
+
+            width: 90%;
+
+            margin: 40px auto;
+        }
+
+        .teacher-table-heading h2 {
+
+            font-size: 26px;
+        }
+
+        .teacher-table-wrapper {
+
+            border-radius: 17px;
+        }
+    }
+
+
+    /* =========================================
+       ANIMATIONS
+    ========================================= */
+
+    @keyframes teacherTableIn {
+
+        from {
+
+            opacity: 0;
+
+            transform:
+                translateY(20px)
+                scale(.98);
+        }
+
+        to {
+
+            opacity: 1;
+
+            transform:
+                translateY(0)
+                scale(1);
+        }
+    }
+
+
+    @keyframes teacherRowIn {
+
+        from {
+
+            opacity: 0;
+
+            transform: translateX(-12px);
+        }
+
+        to {
+
+            opacity: 1;
+
+            transform: translateX(0);
+        }
+    }
+
+</style>
+
+
+<!-- =========================================
+     TEACHER TABLE
+========================================= -->
+
+<section class="teacher-table-section">
+
+
+    <!-- HEADING -->
+
+    <div class="teacher-table-heading">
+
+        <h2>
+            Teacher Records
+        </h2>
+
+        <p>
+            Complete teacher information and subjects
+        </p>
+
+    </div>
+
+
+    <!-- ======================================
+         TABLE WRAPPER
+    ======================================= -->
+
+    <div class="teacher-table-wrapper">
+
+
+        <table class="teacher-modern-table">
+
+
+            <!-- =================================
+                 HEADER
+            ================================== -->
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Name
+                    </th>
+
+                    <th>
+                        Age
+                    </th>
+
+                    <th>
+                        City
+                    </th>
+
+                    <th>
+                        Subject
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <!-- =================================
+                 DATA
+            ================================== -->
+
+            <tbody>
+
+
+                {% for i in data %}
+
+                <tr>
+
+
+                    <!-- NAME -->
+
+                    <td>
+
+                        <div class="teacher-name-cell">
+
+                            <div class="teacher-table-avatar">
+
+                                {{ i.name|first|upper }}
+
+                            </div>
+
+                            {{ i.name }}
+
+                        </div>
+
+                    </td>
+
+
+                    <!-- AGE -->
+
+                    <td>
+
+                        <span class="teacher-age-badge">
+
+                            <i class="fa-solid fa-calendar-days"></i>
+
+                            {{ i.age }}
+
+                        </span>
+
+                    </td>
+
+
+                    <!-- CITY -->
+
+                    <td>
+
+                        <div class="teacher-city-cell">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            {{ i.city }}
+
+                        </div>
+
+                    </td>
+
+
+                    <!-- SUBJECT -->
+
+                    <td>
+
+                        <span class="teacher-subject-badge">
+
+                            <i class="fa-solid fa-book-open"></i>
+
+                            {{ i.subject }}
+
+                        </span>
+
+                    </td>
+
+
+                </tr>
+
+                {% endfor %}
+
+
+            </tbody>
+
+
+        </table>
+
+
+    </div>
+
+
+</section>
+
+
+<hr>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Details</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+
+    body {
+        margin: 0;
+
+        font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
+
+        background: #f7f8fc;
+
+        color: #172033;
+    }
+
+
+    /* =================================
+       MAIN TEACHER SECTION
+    ================================= */
+
+    .teacher-section {
+
+        width: 92%;
+
+        max-width: 1250px;
+
+        margin: 55px auto;
+    }
+
+
+    /* =================================
+       HEADING
+    ================================= */
+
+    .teacher-heading {
+
+        text-align: center;
+
+        margin-bottom: 40px;
+    }
+
+
+    .teacher-heading h1 {
+
+        margin: 0;
+
+        font-size: 34px;
+
+        font-weight: 800;
+
+        color: #172033;
+    }
+
+
+    .teacher-heading p {
+
+        margin: 9px 0 0;
+
+        font-size: 14px;
+
+        color: #7c8497;
+    }
+
+
+    /* =================================
+       CARD GRID
+
+       VERY IMPORTANT
+       Cards yahin se side-by-side honge
+    ================================= */
+
+    .teacher-grid {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 24px;
+
+        width: 100%;
+
+        align-items: stretch;
+    }
+
+
+    /* =================================
+       TABLET
+    ================================= */
+
+    @media (max-width: 950px) {
+
+        .teacher-grid {
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+        }
+    }
+
+
+    /* =================================
+       MOBILE
+    ================================= */
+
+    @media (max-width: 650px) {
+
+        .teacher-section {
+
+            width: 88%;
+
+            margin: 40px auto;
+        }
+
+        .teacher-grid {
+
+            grid-template-columns: 1fr;
+        }
+
+        .teacher-heading h1 {
+
+            font-size: 28px;
+        }
+    }
+
+</style>
+
+
+<!-- =================================
+     TEACHER SECTION
+================================= -->
+
+<section class="teacher-section">
+
+
+    <!-- HEADING ONLY ONCE -->
+
+    <div class="teacher-heading">
+
+        <h1>
+            Teacher Details
+        </h1>
+
+        <p>
+            Explore teacher information and subjects
+        </p>
+
+    </div>
+
+
+    <!-- =================================
+         CARD GRID
+    ================================= -->
+
+    <div class="teacher-grid">
+
+
+        {% for i in data %}
+
+            {% include 'components/teachercard.html' %}
+
+        {% endfor %}
+
+
+    </div>
+
+
+</section>
+
+
+</body>
+
+</html>
+{%endblock%}

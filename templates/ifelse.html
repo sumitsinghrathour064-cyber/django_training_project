@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{%block content%}
+{{list}}
+
+<hr>
+{% for i in list %}
+
+    {% if i|divisibleby:2%}
+        <h2>{{i}}:Even number</h2>
+
+    {%else%}
+        <h2>{{i}}:Odd number</h2>
+
+    {%endif%}
+
+{% endfor %}
+
+{%endblock%}
